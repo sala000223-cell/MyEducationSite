@@ -1,10 +1,183 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <title>دروسي التعليمية</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>مقدمة في الحوسبة السحابية</title>
+  <style>
+    :root{--accent:#0ea5a4;--bg:#f7fbfc;--card:#ffffff;--muted:#556;}
+    *{box-sizing:border-box}
+    body{font-family:Segoe UI, Tahoma, Arial, sans-serif;background:var(--bg);color:#123;line-height:1.6;margin:0;padding:0}
+    header{background:linear-gradient(90deg,var(--accent),#0b7285);color:white;padding:28px 20px}
+    .container{max-width:1000px;margin:0 auto;padding:20px}
+    nav{display:flex;gap:12px;align-items:center;justify-content:space-between}
+    .brand{font-weight:700;font-size:1.25rem}
+    .menu{display:flex;gap:10px}
+    .menu a{color:white;text-decoration:none;padding:8px 10px;border-radius:8px}
+    .menu a:hover{background:rgba(255,255,255,0.08)}
+    .hero{display:flex;gap:20px;align-items:center;margin-top:16px}
+    .hero h1{font-size:1.8rem;margin:0}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(18,40,60,0.06)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+    section h2{margin-top:0}
+    ul.topics{padding-left:18px}
+    .example{background:#0f1724;color:white;padding:14px;border-radius:8px;font-family:Consolas,monospace;overflow:auto}
+    footer{padding:20px;text-align:center;color:var(--muted)}
+    /* responsive mobile menu */
+    .hamburger{display:none;border:0;background:transparent;color:white;font-size:20px}
+    @media(max-width:720px){
+      .menu{display:none}
+      .hamburger{display:inline-block}
+      .hero{flex-direction:column;align-items:flex-start}
+    }
+    /* quiz */
+    .quiz .q{margin-bottom:12px}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;border:0;background:var(--accent);color:white;cursor:pointer}
+    .muted{color:#6b7280}
+    .badge{display:inline-block;padding:4px 8px;background:#eef9f9;border-radius:999px;font-size:12px}
+  </style>
 </head>
 <body>
-    <h1>مرحباً بكم في موقعي التعليمي</h1>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">تعلم الحوسبة السحابية</div>
+        <div>
+          <button class="hamburger" id="hamburger">☰</button>
+          <div class="menu" id="menu">
+            <a href="#overview">نظرة عامة</a>
+            <a href="#services">الخدمات</a>
+            <a href="#tutorial">درس سريع</a>
+            <a href="#quiz">اختبار</a>
+          </div>
+        </div>
+      </nav>
+      <div class="hero">
+        <div style="flex:1">
+          <h1>ما هي الحوسبة السحابية؟</h1>
+          <p class="muted">الحوسبة السحابية هي تقديم خدمات الحوسبة عبر الإنترنت — مثل الخوادم والتخزين وقواعد البيانات والشبكات والبرمجيات — بدلًا من تشغيلها محليًا على جهازك.</p>
+          <p><span class="badge">مستوى: مبتدئ</span> <span style="margin-left:8px" class="badge">زمن التعلم: 15 دقيقة</span></p>
+        </div>
+        <div style="width:220px">
+          <div class="card">
+            <strong>لماذا نتعلمها؟</strong>
+            <ul class="muted" style="margin:8px 0 0;padding-left:18px;">
+              <li>تقليل التكاليف</li>
+              <li>قابلية التوسع</li>
+              <li>إطلاق التطبيقات بسرعة</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top:18px">
+    <section id="overview" class="card">
+      <h2>نظرة عامة</h2>
+      <p>تتوزع خدمات الحوسبة السحابية بشكل عام إلى ثلاث طبقات رئيسية:</p>
+      <div class="grid">
+        <div class="card">
+          <h3>IaaS — البنية التحتية كخدمة</h3>
+          <p class="muted">خوادم افتراضية، تخزين، شبكات. أنت تدير النظام التشغيلي والتطبيقات.</p>
+        </div>
+        <div class="card">
+          <h3>PaaS — النظام كمنصة</h3>
+          <p class="muted">منصة لبناء تطبيقات دون إدارة البنية التحتية (قاعدة بيانات مُدارة، runtime).</p>
+        </div>
+        <div class="card">
+          <h3>SaaS — البرمجيات كخدمة</h3>
+          <p class="muted">تطبيق جاهز يعمل عبر الإنترنت (مثل البريد الإلكتروني كخدمة أو أدوات الإنتاجية).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="card" style="margin-top:14px">
+      <h2>أمثلة على خدمات سحابية مشهورة</h2>
+      <ul class="topics">
+        <li>AWS — Amazon Web Services</li>
+        <li>Microsoft Azure</li>
+        <li>Google Cloud Platform</li>
+        <li>خدمات خاصة (Private Cloud)</li>
+      </ul>
+    </section>
+
+    <section id="tutorial" class="card" style="margin-top:14px">
+      <h2>درس سريع — رفع موقع بسيط إلى سحابة (مفاهيم)</h2>
+      <ol>
+        <li>أنشئ حسابًا على مزود سحابي.</li>
+        <li>أنشئ خادم افتراضي أو خدمة استضافة.</li>
+        <li>حمّل ملفات الموقع وأشر إلى اسم النطاق.</li>
+        <li>ضبط صلاحيات الأمان (قواعد الجدار الناري).</li>
+      </ol>
+
+      <h3>مثال سريع على ملف HTML يمكن رفعه:</h3>
+      <pre class="example">&lt;!doctype html&gt;
+&lt;html lang="ar"&gt;
+&lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;title&gt;مثال&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;مرحبا سحابة&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+      <p>نصيحة: ابدأ بخدمة استضافة مجانية أو خطة مجانية للمزود لتجربة بيئة العمل.</p>
+    </section>
+
+    <section id="quiz" class="card" style="margin-top:14px">
+      <h2>اختبار قصير</h2>
+      <div class="quiz" id="quizArea">
+        <div class="q">
+          <label>1) أي طبقة تعطيك تطبيقًا جاهزًا يعمل عبر الإنترنت؟</label><br>
+          <input type="radio" name="q1" value="a"> IaaS<br>
+          <input type="radio" name="q1" value="b"> PaaS<br>
+          <input type="radio" name="q1" value="c"> SaaS<br>
+        </div>
+        <div class="q">
+          <label>2) أي ميزة من الميزات التالية لا تعد فائدة مباشرة للحوسبة السحابية؟</label><br>
+          <input type="radio" name="q2" value="a"> القابلية للتوسع<br>
+          <input type="radio" name="q2" value="b"> صيانة الأجهزة محلياً بدون تكلفة<br>
+          <input type="radio" name="q2" value="c"> الدفع حسب الاستخدام<br>
+        </div>
+        <button class="btn" id="checkBtn">تحقق من الإجابات</button>
+        <div id="result" style="margin-top:12px"></div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:14px">
+      <h2>مصادر لتعلم أكثر</h2>
+      <ul class="topics">
+        <li>دروس رسمية من AWS, Azure, GCP</li>
+        <li>قنوات يوتيوب تعليمية</li>
+        <li>دورات عبر منصات مثل Coursera أو Udemy</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>صُنع بواسطة موقع تعليمي بسيط — يمكنك تعديل المحتوى أو طلب ميزات إضافية.</p>
+    </div>
+  </footer>
+
+  <script>
+    // mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    hamburger.addEventListener('click', ()=>{
+      if(menu.style.display==='flex') menu.style.display='none'; else menu.style.display='flex';
+      menu.style.flexDirection = 'column';
+    });
+
+    // quiz logic
+    document.getElementById('checkBtn').addEventListener('click', ()=>{
+      const a1 = document.querySelector('input[name="q1"]:checked');
+      const a2 = document.querySelector('input[name="q2"]:checked');
+      let score=0; let total=2; let messages=[];
+      if(a1 && a1.value==='c') score++;
+      if(a2 && a2.value==='b') score++;
+      if(!a1 || !a2){ document.getElementById('result').innerHTML='<span class="muted">اختر إجابات لكل الأسئلة أولاً.</span>'; return; }
+      document.getElementById('result').innerHTML = `درجتك: ${score} من ${total}`;
+    });
+  </script>
 </body>
 </html>
