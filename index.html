@@ -153,11 +153,7 @@
 
   </main>
 
-  <footer>
-    <div class="container">
-      <p>صُنع بواسطة موقع تعليمي بسيط — يمكنك تعديل المحتوى أو طلب ميزات إضافية.</p>
-    </div>
-  </footer>
+ 
 
   <script>
     // mobile menu
@@ -226,6 +222,49 @@ git add filename.txt
 </pre>
 
 </section>
+<section id="git-collaboration" class="card" style="margin-top:14px">
+  <h2>الدرس الثاني — عملية التعاون Collaboration</h2>
+  <p>في هذا الدرس ستتعلم كيف يعمل المطورون معًا على نفس المشروع باستخدام Git و GitHub.</p>
+
+  <h3>1) استنساخ المشروع (Clone)</h3>
+  <p>يستخدم لاستنساخ المستودع من GitHub إلى جهازك:</p>
+  <pre class="example">git clone https://github.com/username/repo.git
+</pre>
+
+  <h3>2) إضافة فرع جديد للعمل عليه</h3>
+  <pre class="example">git branch feature-login
+git checkout feature-login
+</pre>
+
+  <h3>3) عمل تعديلات ثم رفعها</h3>
+  <pre class="example">git add .
+git commit -m "إضافة ميزة تسجيل الدخول"
+git push origin feature-login
+</pre>
+
+  <h3>4) إنشاء Pull Request</h3>
+  <p>يتم من خلال GitHub لطلب دمج فرعك مع الفرع الرئيسي.</p>
+
+  <h3>5) مراجعة الكود (Code Review)</h3>
+  <p>يقوم الفريق بقراءة الأكواد وتقديم ملاحظات قبل الدمج.</p>
+
+  <h3>6) حل التعارضات (Merge Conflicts)</h3>
+  <pre class="example">git pull origin main
+# تعديل الملفات المتعارضة
+git add .
+git commit -m "حل التعارضات"
+</pre>
+
+  <h3>7) دمج الفرع مع الفرع الرئيسي</h3>
+  <pre class="example">git checkout main
+git merge feature-login
+</pre>
+
+  <h3>8) جلب آخر تحديثات الفريق</h3>
+  <pre class="example">git pull origin main
+</pre>
+</section>
+
 
 </body>
 </html>
