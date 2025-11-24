@@ -178,6 +178,54 @@
       if(!a1 || !a2){ document.getElementById('result').innerHTML='<span class="muted">اختر إجابات لكل الأسئلة أولاً.</span>'; return; }
       document.getElementById('result').innerHTML = `درجتك: ${score} من ${total}`;
     });
+    
   </script>
+  <section id="git-basics" class="card" style="margin-top:14px">
+  <h2>الدرس الأول — أوامر Git الأساسية</h2>
+  <p>في هذا الدرس ستتعرف على أهم أوامر Git التي تحتاجها لإدارة مشاريعك وحفظ الإصدارات.</p>
+
+  <h3>تهيئة المستودع</h3>
+  <pre class="example">git init
+</pre>
+
+  <h3>إضافة الملفات للتتبع</h3>
+  <pre class="example">git add .
+git add filename.txt
+</pre>
+
+  <h3>حفظ التغييرات</h3>
+  <pre class="example">git commit -m "رسالة التغيير"
+</pre>
+
+  <h3>عرض حالة المشروع</h3>
+  <pre class="example">git status
+</pre>
+
+  <h3>عرض تاريخ الإصدارات</h3>
+  <pre class="example">git log
+</pre>
+
+  <h3>إنشاء فرع جديد</h3>
+  <pre class="example">git branch new-branch
+</pre>
+
+  <h3>الانتقال بين الفروع</h3>
+  <pre class="example">git checkout new-branch
+</pre>
+
+  <h3>دمج الفروع</h3>
+  <pre class="example">git merge new-branch
+</pre>
+
+  <h3>ربط المشروع بمستودع GitHub</h3>
+  <pre class="example">git remote add origin https://github.com/username/repo.git
+</pre>
+
+  <h3>رفع الملفات إلى GitHub</h3>
+  <pre class="example">git push -u origin main
+</pre>
+
+</section>
+
 </body>
 </html>
